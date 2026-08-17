@@ -1,0 +1,15 @@
+**/.git
+**/.github
+**/.idea
+**/.vscode
+**/node_modules
+**/.next
+**/coverage
+**/*.md
+docs
+deployment/kubernetes
+agent-transcripts
+*.log
+.env
+.env.*
+!**/.env.example

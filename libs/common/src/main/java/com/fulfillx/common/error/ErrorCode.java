@@ -1,0 +1,45 @@
+package com.fulfillx.common.error;
+
+import org.springframework.http.HttpStatus;
+
+public enum ErrorCode {
+    INVALID_CREDENTIALS(HttpStatus.UNAUTHORIZED),
+    ACCOUNT_DISABLED(HttpStatus.FORBIDDEN),
+    EMAIL_TAKEN(HttpStatus.CONFLICT),
+    INVALID_REFRESH_TOKEN(HttpStatus.UNAUTHORIZED),
+    UNAUTHENTICATED(HttpStatus.UNAUTHORIZED),
+    ACCESS_DENIED(HttpStatus.FORBIDDEN),
+    VALIDATION_FAILED(HttpStatus.BAD_REQUEST),
+    PRODUCT_NOT_FOUND(HttpStatus.NOT_FOUND),
+    PRODUCT_INACTIVE(HttpStatus.CONFLICT),
+    SKU_TAKEN(HttpStatus.CONFLICT),
+    WAREHOUSE_NOT_FOUND(HttpStatus.NOT_FOUND),
+    WAREHOUSE_CODE_TAKEN(HttpStatus.CONFLICT),
+    ORDER_NOT_FOUND(HttpStatus.NOT_FOUND),
+    ILLEGAL_ORDER_TRANSITION(HttpStatus.CONFLICT),
+    ORDER_NOT_CANCELLABLE(HttpStatus.CONFLICT),
+    IDEMPOTENCY_KEY_REQUIRED(HttpStatus.BAD_REQUEST),
+    IDEMPOTENCY_KEY_REUSED(HttpStatus.CONFLICT),
+    INSUFFICIENT_INVENTORY(HttpStatus.CONFLICT),
+    INVENTORY_NOT_FOUND(HttpStatus.NOT_FOUND),
+    RESERVATION_NOT_FOUND(HttpStatus.NOT_FOUND),
+    PAYMENT_NOT_FOUND(HttpStatus.NOT_FOUND),
+    SHIPMENT_NOT_FOUND(HttpStatus.NOT_FOUND),
+    ILLEGAL_SHIPMENT_TRANSITION(HttpStatus.CONFLICT),
+    CATALOG_UNAVAILABLE(HttpStatus.SERVICE_UNAVAILABLE),
+    WAREHOUSE_UNAVAILABLE(HttpStatus.SERVICE_UNAVAILABLE),
+    RATE_LIMITED(HttpStatus.TOO_MANY_REQUESTS),
+    CONFLICT(HttpStatus.CONFLICT),
+    NOT_FOUND(HttpStatus.NOT_FOUND),
+    INTERNAL_ERROR(HttpStatus.INTERNAL_SERVER_ERROR);
+
+    private final HttpStatus status;
+
+    ErrorCode(HttpStatus status) {
+        this.status = status;
+    }
+
+    public HttpStatus status() {
+        return status;
+    }
+}

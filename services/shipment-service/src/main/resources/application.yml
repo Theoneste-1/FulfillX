@@ -1,0 +1,46 @@
+server:
+  port: ${SERVER_PORT:8086}
+spring:
+  application:
+    name: shipment-service
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/fulfillx_shipment}
+    username: ${SPRING_DATASOURCE_USERNAME:fulfillx}
+    password: ${SPRING_DATASOURCE_PASSWORD:fulfillx}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    consumer:
+      group-id: shipment-service
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+fulfillx:
+  demo:
+    auto-progress-shipments: ${FULFILLX_DEMO:true}
+  security:
+    jwt:
+      secret: ${JWT_SECRET:fulfillx-demo-jwt-secret-change-me-32bytes!!}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics
+  tracing:
+    sampling:
+      probability: 1.0
+  otlp:
+    tracing:
+      endpoint: ${OTEL_EXPORTER_OTLP_ENDPOINT:http://localhost:4318/v1/traces}
+logging:
+  structured:
+    format:
+      console: ecs

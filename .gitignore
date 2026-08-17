@@ -1,0 +1,58 @@
+# Build
+**/target/
+**/.mvn/wrapper/maven-wrapper.jar
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
+replay_pid*
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Env / secrets
+.env.*.local
+*.pem
+*.p12
+*.jks
+
+# Node
+**/node_modules/
+**/.next/
+**/out/
+**/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Logs
+*.log
+logs/
+
+# Test / coverage
+**/coverage/
+**/.nyc_output/
+**/test-output/
+
+# Docker
+.docker/
+
+# Local data
+data/
+infrastructure/postgres/data/
+config.bat

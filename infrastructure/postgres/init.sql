@@ -1,0 +1,9 @@
+CREATE DATABASE fulfillx_auth;
+CREATE DATABASE fulfillx_catalog;
+CREATE DATABASE fulfillx_order;
+CREATE DATABASE fulfillx_inventory;
+CREATE DATABASE fulfillx_warehouse;
+CREATE DATABASE fulfillx_shipment;
+CREATE DATABASE fulfillx_payment;
+CREATE DATABASE fulfillx_notification;
+CREATE DATABASE fulfillx_analytics;
